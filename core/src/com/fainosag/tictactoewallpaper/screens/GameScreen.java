@@ -41,9 +41,10 @@ public class GameScreen implements Screen {
             box.reset();
             gameState=0;
         }
+        turn=true;
     }
     private void loadBoxes(){
-        float yOffset=-25;
+        float yOffset=-15;
         boxes[1]=new Box(240-60,620+yOffset);
         boxes[4]=new Box(240-60,480+yOffset);
         boxes[7]=new Box(240-60,340+yOffset);
@@ -58,13 +59,13 @@ public class GameScreen implements Screen {
 
     }
     private void loadSprites(){
-        playerVsPhone=new Sprite(Gfx.playervsplayer);
-        playerVsPhone.setSize(161,95);
-        playerVsPhone.setPosition(50,100);
+        playerVsPlayer=new Sprite(Gfx.playervsplayer);
+        playerVsPlayer.setSize(161,95);
+        playerVsPlayer.setPosition(50,150);
 
-        playerVsPlayer=new Sprite(Gfx.playervsphone);
-        playerVsPlayer.setSize(165,110);
-        playerVsPlayer.setPosition(270,100);
+        playerVsPhone=new Sprite(Gfx.playervsphone);
+        playerVsPhone.setSize(165,110);
+        playerVsPhone.setPosition(270,150);
     }
 
     @Override
@@ -101,17 +102,19 @@ public class GameScreen implements Screen {
         for(Box box : boxes){
                 box.draw(cameraWrapper.spriteBatch);
         }
+
+        float messageY=290;
         if(gameState==1){
-            cameraWrapper.spriteBatch.draw(Gfx.player1_wins,240-252/2f,750,252,27);
+            cameraWrapper.spriteBatch.draw(Gfx.player1_wins,240-252/2f,messageY,252,27);
         }
         if(gameState==2){
-            cameraWrapper.spriteBatch.draw(Gfx.player2_wins,240-263/2f,750,263,27);
+            cameraWrapper.spriteBatch.draw(Gfx.player2_wins,240-263/2f,messageY,263,27);
         }
         if(gameState==3){
-            cameraWrapper.spriteBatch.draw(Gfx.phone_wins,240-228/2f,750,228,26);
+            cameraWrapper.spriteBatch.draw(Gfx.phone_wins,240-228/2f,messageY,228,26);
         }
         if(gameState==4){
-            cameraWrapper.spriteBatch.draw(Gfx.draw,240-108/2f,750,108,27);
+            cameraWrapper.spriteBatch.draw(Gfx.draw,240-108/2f,messageY,108,27);
         }
         playerVsPlayer.draw(cameraWrapper.spriteBatch);
         playerVsPhone.draw(cameraWrapper.spriteBatch);

@@ -12,6 +12,7 @@ public class Box {
     private static Rectangle rectangle=new Rectangle();
     private float x,y;
     public char value=' ';
+    public boolean red=false;
     // the value can be x,o, or ' '
 
     public Box(float x, float y) {
@@ -25,6 +26,7 @@ public class Box {
     }
     public void reset(){
         value=' ';
+        red=false;
     }
 
     public void draw(SpriteBatch spriteBatch){
@@ -36,6 +38,9 @@ public class Box {
         if(value=='o'){
             float width= 102 ,height= 96;
             spriteBatch.draw(Gfx.o,x+60-width/2f,y+60-height/2f,width,height);
+        }
+        if(red){
+            spriteBatch.draw(Gfx.redcolor,x,y,120,120);
         }
     }
 }
