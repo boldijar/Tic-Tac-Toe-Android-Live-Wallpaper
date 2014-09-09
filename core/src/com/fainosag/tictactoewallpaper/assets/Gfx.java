@@ -11,7 +11,7 @@ public class Gfx {
     // this class will have all the texture regions that we need in our game
     public static TextureRegion x,o;
     public static TextureRegion playervsplayer,playervsphone;
-    public static TextureRegion redcolor,graycolor;
+    public static TextureRegion redcolor,greycolor;
     public static TextureRegion player1_wins,player2_wins,phone_wins;
 
     public static void load() {
@@ -20,7 +20,7 @@ public class Gfx {
         playervsplayer=loadTextureRegion("playervsplayer");
         playervsphone=loadTextureRegion("playervsphone");
         redcolor=loadTextureRegion("redcolor");
-        graycolor=loadTextureRegion("graycolor");
+        greycolor=loadTextureRegion("greycolor");
         player1_wins=loadTextureRegion("player1_wins");
         player2_wins=loadTextureRegion("player2_wins");
         phone_wins=loadTextureRegion("phone_wins");
