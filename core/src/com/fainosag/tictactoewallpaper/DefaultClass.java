@@ -12,6 +12,7 @@ public class DefaultClass extends ApplicationAdapter {
 	// test
 	@Override
 	public void create () {
+        //
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 	}
